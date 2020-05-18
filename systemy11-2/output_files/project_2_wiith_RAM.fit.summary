@@ -1,0 +1,20 @@
+Fitter Status : Successful - Mon May 18 14:46:28 2020
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : project_2_wiith_RAM
+Top-level Entity Name : project_2_wiith_RAM
+Family : Cyclone V
+Device : 5CSEMA6F31C6
+Timing Models : Final
+Logic utilization (in ALMs) : 35 / 41,910 ( < 1 % )
+Total registers : 57
+Total pins : 12 / 457 ( 3 % )
+Total virtual pins : 0
+Total block memory bits : 1,152 / 5,662,720 ( < 1 % )
+Total RAM Blocks : 1 / 553 ( < 1 % )
+Total DSP Blocks : 0 / 112 ( 0 % )
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI PMA TX Serializers : 0
+Total PLLs : 0 / 6 ( 0 % )
+Total DLLs : 0 / 4 ( 0 % )

@@ -1,0 +1,706 @@
+Analysis & Synthesis report for processor_2
+Mon May 18 14:13:52 2020
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: regn:comb_164
+ 13. Parameter Settings for User Entity Instance: regn:comb_165
+ 14. Parameter Settings for User Entity Instance: regn:comb_166
+ 15. Parameter Settings for User Entity Instance: regn:comb_167
+ 16. Parameter Settings for User Entity Instance: regn:comb_168
+ 17. Parameter Settings for User Entity Instance: regn:comb_169
+ 18. Parameter Settings for User Entity Instance: regn:comb_170
+ 19. Parameter Settings for User Entity Instance: regn:reg_IR
+ 20. Parameter Settings for User Entity Instance: regn:reg_A
+ 21. Parameter Settings for User Entity Instance: regn:reg_Addr
+ 22. Parameter Settings for User Entity Instance: regn:reg_Dout
+ 23. Parameter Settings for User Entity Instance: regn:reg_w
+ 24. Parameter Settings for User Entity Instance: counter_N_bits:comb_171
+ 25. Parameter Settings for User Entity Instance: regn:reg_G
+ 26. Port Connectivity Checks: "counter_N_bits:comb_171"
+ 27. Port Connectivity Checks: "regn:reg_w"
+ 28. Port Connectivity Checks: "regn:reg_Dout"
+ 29. Port Connectivity Checks: "regn:reg_Addr"
+ 30. Port Connectivity Checks: "regn:reg_A"
+ 31. Port Connectivity Checks: "regn:comb_170"
+ 32. Port Connectivity Checks: "regn:comb_169"
+ 33. Port Connectivity Checks: "regn:comb_168"
+ 34. Port Connectivity Checks: "regn:comb_167"
+ 35. Port Connectivity Checks: "regn:comb_166"
+ 36. Port Connectivity Checks: "regn:comb_165"
+ 37. Port Connectivity Checks: "regn:comb_164"
+ 38. Port Connectivity Checks: "dec3to8:comb_7"
+ 39. Port Connectivity Checks: "dec3to8:comb_6"
+ 40. Post-Synthesis Netlist Statistics for Top Partition
+ 41. Elapsed Time Per Partition
+ 42. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Mon May 18 14:13:52 2020       ;
+; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                   ; processor_2                                 ;
+; Top-level Entity Name           ; processor_2                                 ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 57                                          ;
+; Total pins                      ; 32                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEMA6F31C6       ;                    ;
+; Top-level entity name                                                           ; processor_2        ; processor_2        ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                        ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                          ; Library ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------+---------+
+; processor_2.v                    ; yes             ; User Verilog HDL File  ; C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v ;         ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimate of Logic utilization (ALMs needed) ; 39          ;
+;                                             ;             ;
+; Combinational ALUT usage for logic          ; 59          ;
+;     -- 7 input functions                    ; 0           ;
+;     -- 6 input functions                    ; 11          ;
+;     -- 5 input functions                    ; 17          ;
+;     -- 4 input functions                    ; 2           ;
+;     -- <=3 input functions                  ; 29          ;
+;                                             ;             ;
+; Dedicated logic registers                   ; 57          ;
+;                                             ;             ;
+; I/O pins                                    ; 32          ;
+;                                             ;             ;
+; Total DSP Blocks                            ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; Clock~input ;
+; Maximum fan-out                             ; 57          ;
+; Total fan-out                               ; 501         ;
+; Average fan-out                             ; 2.78        ;
++---------------------------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                          ;
++------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------+----------------+--------------+
+; Compilation Hierarchy Node   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                  ; Entity Name    ; Library Name ;
++------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------+----------------+--------------+
+; |processor_2                 ; 59 (43)             ; 57 (2)                    ; 0                 ; 0          ; 32   ; 0            ; |processor_2                         ; processor_2    ; work         ;
+;    |counter_N_bits:comb_171| ; 14 (14)             ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |processor_2|counter_N_bits:comb_171 ; counter_N_bits ; work         ;
+;    |dec3to8:comb_6|          ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |processor_2|dec3to8:comb_6          ; dec3to8        ; work         ;
+;    |dec3to8:comb_7|          ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |processor_2|dec3to8:comb_7          ; dec3to8        ; work         ;
+;    |regn:reg_Addr|           ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |processor_2|regn:reg_Addr           ; regn           ; work         ;
+;    |regn:reg_A|              ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |processor_2|regn:reg_A              ; regn           ; work         ;
+;    |regn:reg_Dout|           ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |processor_2|regn:reg_Dout           ; regn           ; work         ;
+;    |regn:reg_G|              ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |processor_2|regn:reg_G              ; regn           ; work         ;
+;    |regn:reg_IR|             ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |processor_2|regn:reg_IR             ; regn           ; work         ;
+;    |regn:reg_w|              ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |processor_2|regn:reg_w              ; regn           ; work         ;
++------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------+----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                               ;
++----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------+------------------------+
+; BusWires[9]                                        ; Mux14               ; yes                    ;
+; BusWires[8]                                        ; Mux14               ; yes                    ;
+; BusWires[7]                                        ; Mux14               ; yes                    ;
+; BusWires[6]                                        ; Mux14               ; yes                    ;
+; BusWires[5]                                        ; Mux14               ; yes                    ;
+; BusWires[4]                                        ; Mux14               ; yes                    ;
+; BusWires[3]                                        ; Mux14               ; yes                    ;
+; BusWires[2]                                        ; Mux14               ; yes                    ;
+; BusWires[1]                                        ; Mux14               ; yes                    ;
+; Number of user-specified and inferred latches = 9  ;                     ;                        ;
++----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 57    ;
+; Number of registers using Synchronous Clear  ; 10    ;
+; Number of registers using Synchronous Load   ; 10    ;
+; Number of registers using Asynchronous Clear ; 11    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 54    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; Tstep_Q[0]                             ; 27      ;
+; Total number of inverted registers = 1 ;         ;
++----------------------------------------+---------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
+; 4:1                ; 9 bits    ; 18 LEs        ; 0 LEs                ; 18 LEs                 ; Yes        ; |processor_2|counter_N_bits:comb_171|Q[0] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: regn:comb_164 ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; n              ; 9     ; Signed Integer                    ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: regn:comb_165 ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; n              ; 9     ; Signed Integer                    ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: regn:comb_166 ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; n              ; 9     ; Signed Integer                    ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: regn:comb_167 ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; n              ; 9     ; Signed Integer                    ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: regn:comb_168 ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; n              ; 9     ; Signed Integer                    ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: regn:comb_169 ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; n              ; 9     ; Signed Integer                    ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: regn:comb_170 ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; n              ; 9     ; Signed Integer                    ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: regn:reg_IR ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; n              ; 9     ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: regn:reg_A ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; n              ; 9     ; Signed Integer                 ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: regn:reg_Addr ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; n              ; 9     ; Signed Integer                    ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: regn:reg_Dout ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; n              ; 9     ; Signed Integer                    ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: regn:reg_w ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; n              ; 9     ; Signed Integer                 ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: counter_N_bits:comb_171 ;
++----------------+-------+---------------------------------------------+
+; Parameter Name ; Value ; Type                                        ;
++----------------+-------+---------------------------------------------+
+; N              ; 9     ; Signed Integer                              ;
++----------------+-------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: regn:reg_G ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; n              ; 9     ; Signed Integer                 ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "counter_N_bits:comb_171"                                                                                                                                                         ;
++------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                           ;
++------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; data ; Input ; Warning  ; Input port expression (10 bits) is wider than the input port (9 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "regn:reg_w"                                                                                                                                 ;
++--------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                                                                   ;
++--------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
+; D      ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (9 bits) it drives.  Extra input bit(s) "D[8..1]" will be connected to GND. ;
+; Enable ; Input  ; Info     ; Stuck at VCC                                                                                                                              ;
+; Q      ; Output ; Warning  ; Output or bidir port (9 bits) is wider than the port expression (1 bits) it drives; bit(s) "Q[8..1]" have no fanouts                      ;
++--------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "regn:reg_Dout"                                                                                                                                                                   ;
++------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                           ;
++------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; D    ; Input ; Warning  ; Input port expression (10 bits) is wider than the input port (9 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "regn:reg_Addr"                                                                                                                                                                   ;
++------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                           ;
++------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; D    ; Input ; Warning  ; Input port expression (10 bits) is wider than the input port (9 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "regn:reg_A"                                                                                                                                                                      ;
++------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                           ;
++------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; D    ; Input ; Warning  ; Input port expression (10 bits) is wider than the input port (9 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "regn:comb_170"                                                                                                                                                                    ;
++------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                                                                           ;
++------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; D    ; Input  ; Warning  ; Input port expression (10 bits) is wider than the input port (9 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; Q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                               ;
++------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "regn:comb_169"                                                                                                                                                                    ;
++------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                                                                           ;
++------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; D    ; Input  ; Warning  ; Input port expression (10 bits) is wider than the input port (9 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; Q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                               ;
++------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "regn:comb_168"                                                                                                                                                                    ;
++------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                                                                           ;
++------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; D    ; Input  ; Warning  ; Input port expression (10 bits) is wider than the input port (9 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; Q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                               ;
++------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "regn:comb_167"                                                                                                                                                                    ;
++------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                                                                           ;
++------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; D    ; Input  ; Warning  ; Input port expression (10 bits) is wider than the input port (9 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; Q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                               ;
++------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "regn:comb_166"                                                                                                                                                                    ;
++------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                                                                           ;
++------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; D    ; Input  ; Warning  ; Input port expression (10 bits) is wider than the input port (9 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; Q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                               ;
++------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "regn:comb_165"                                                                                                                                                                    ;
++------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                                                                           ;
++------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; D    ; Input  ; Warning  ; Input port expression (10 bits) is wider than the input port (9 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; Q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                               ;
++------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "regn:comb_164"                                                                                                                                                                    ;
++------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                                                                           ;
++------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; D    ; Input  ; Warning  ; Input port expression (10 bits) is wider than the input port (9 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; Q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                               ;
++------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dec3to8:comb_7"                                                                        ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; En      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; Y[7..1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "dec3to8:comb_6" ;
++------+-------+----------+------------------+
+; Port ; Type  ; Severity ; Details          ;
++------+-------+----------+------------------+
+; En   ; Input ; Info     ; Stuck at VCC     ;
++------+-------+----------+------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 57                          ;
+;     CLR SCLR          ; 1                           ;
+;     CLR SLD           ; 1                           ;
+;     ENA               ; 45                          ;
+;     ENA CLR SCLR SLD  ; 9                           ;
+;     plain             ; 1                           ;
+; arriav_lcell_comb     ; 60                          ;
+;     arith             ; 19                          ;
+;         1 data inputs ; 9                           ;
+;         3 data inputs ; 1                           ;
+;         5 data inputs ; 9                           ;
+;     normal            ; 41                          ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 3                           ;
+;         3 data inputs ; 15                          ;
+;         4 data inputs ; 2                           ;
+;         5 data inputs ; 8                           ;
+;         6 data inputs ; 11                          ;
+; boundary_port         ; 32                          ;
+;                       ;                             ;
+; Max LUT depth         ; 5.00                        ;
+; Average LUT depth     ; 2.18                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Mon May 18 14:13:41 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off processor_2 -c processor_2
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 5 design units, including 5 entities, in source file processor_2.v
+    Info (12023): Found entity 1: processor_2 File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 374
+    Info (12023): Found entity 2: regn File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 599
+    Info (12023): Found entity 3: dec3to8 File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 618
+    Info (12023): Found entity 4: counter_N_bits File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 645
+    Info (12023): Found entity 5: counterlpm File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 660
+Warning (10236): Verilog HDL Implicit Net warning at processor_2.v(578): created implicit net for "sel" File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 578
+Critical Warning (10846): Verilog HDL Instantiation warning at processor_2.v(391): instance has no name File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 391
+Critical Warning (10846): Verilog HDL Instantiation warning at processor_2.v(392): instance has no name File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 392
+Critical Warning (10846): Verilog HDL Instantiation warning at processor_2.v(550): instance has no name File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 550
+Critical Warning (10846): Verilog HDL Instantiation warning at processor_2.v(551): instance has no name File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 551
+Critical Warning (10846): Verilog HDL Instantiation warning at processor_2.v(552): instance has no name File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 552
+Critical Warning (10846): Verilog HDL Instantiation warning at processor_2.v(553): instance has no name File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 553
+Critical Warning (10846): Verilog HDL Instantiation warning at processor_2.v(554): instance has no name File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 554
+Critical Warning (10846): Verilog HDL Instantiation warning at processor_2.v(555): instance has no name File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 555
+Critical Warning (10846): Verilog HDL Instantiation warning at processor_2.v(556): instance has no name File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 556
+Critical Warning (10846): Verilog HDL Instantiation warning at processor_2.v(563): instance has no name File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 563
+Info (12127): Elaborating entity "processor_2" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at processor_2.v(399): truncated value with size 3 to match size of target (2) File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 399
+Warning (10230): Verilog HDL assignment warning at processor_2.v(400): truncated value with size 3 to match size of target (2) File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 400
+Warning (10230): Verilog HDL assignment warning at processor_2.v(403): truncated value with size 3 to match size of target (2) File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 403
+Warning (10230): Verilog HDL assignment warning at processor_2.v(407): truncated value with size 3 to match size of target (2) File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 407
+Warning (10230): Verilog HDL assignment warning at processor_2.v(408): truncated value with size 3 to match size of target (2) File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 408
+Warning (10230): Verilog HDL assignment warning at processor_2.v(412): truncated value with size 3 to match size of target (2) File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 412
+Warning (10230): Verilog HDL assignment warning at processor_2.v(413): truncated value with size 3 to match size of target (2) File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 413
+Warning (10199): Verilog HDL Case Statement warning at processor_2.v(415): case item expression never matches the case expression File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 415
+Warning (10235): Verilog HDL Always Construct warning at processor_2.v(475): variable "G" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 475
+Warning (10270): Verilog HDL Case Statement warning at processor_2.v(440): incomplete case statement has no default case item File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 440
+Warning (10270): Verilog HDL Case Statement warning at processor_2.v(487): incomplete case statement has no default case item File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 487
+Warning (10199): Verilog HDL Case Statement warning at processor_2.v(518): case item expression never matches the case expression File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 518
+Warning (10230): Verilog HDL assignment warning at processor_2.v(546): truncated value with size 3 to match size of target (2) File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 546
+Warning (10230): Verilog HDL assignment warning at processor_2.v(567): truncated value with size 10 to match size of target (9) File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 567
+Warning (10230): Verilog HDL assignment warning at processor_2.v(569): truncated value with size 10 to match size of target (9) File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 569
+Warning (10230): Verilog HDL assignment warning at processor_2.v(578): truncated value with size 10 to match size of target (1) File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 578
+Warning (10199): Verilog HDL Case Statement warning at processor_2.v(582): case item expression never matches the case expression File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 582
+Warning (10199): Verilog HDL Case Statement warning at processor_2.v(583): case item expression never matches the case expression File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 583
+Warning (10199): Verilog HDL Case Statement warning at processor_2.v(584): case item expression never matches the case expression File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 584
+Warning (10199): Verilog HDL Case Statement warning at processor_2.v(585): case item expression never matches the case expression File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 585
+Warning (10199): Verilog HDL Case Statement warning at processor_2.v(586): case item expression never matches the case expression File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 586
+Warning (10199): Verilog HDL Case Statement warning at processor_2.v(587): case item expression never matches the case expression File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 587
+Warning (10199): Verilog HDL Case Statement warning at processor_2.v(588): case item expression never matches the case expression File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 588
+Warning (10235): Verilog HDL Always Construct warning at processor_2.v(589): variable "pc" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 589
+Warning (10199): Verilog HDL Case Statement warning at processor_2.v(590): case item expression never matches the case expression File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 590
+Warning (10199): Verilog HDL Case Statement warning at processor_2.v(591): case item expression never matches the case expression File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 591
+Warning (10270): Verilog HDL Case Statement warning at processor_2.v(581): incomplete case statement has no default case item File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 581
+Warning (10240): Verilog HDL Always Construct warning at processor_2.v(580): inferring latch(es) for variable "BusWires", which holds its previous value in one or more paths through the always construct File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 580
+Info (10041): Inferred latch for "BusWires[9]" at processor_2.v(580) File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 580
+Info (10041): Inferred latch for "BusWires[8]" at processor_2.v(580) File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 580
+Info (10041): Inferred latch for "BusWires[7]" at processor_2.v(580) File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 580
+Info (10041): Inferred latch for "BusWires[6]" at processor_2.v(580) File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 580
+Info (10041): Inferred latch for "BusWires[5]" at processor_2.v(580) File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 580
+Info (10041): Inferred latch for "BusWires[4]" at processor_2.v(580) File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 580
+Info (10041): Inferred latch for "BusWires[3]" at processor_2.v(580) File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 580
+Info (10041): Inferred latch for "BusWires[2]" at processor_2.v(580) File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 580
+Info (10041): Inferred latch for "BusWires[1]" at processor_2.v(580) File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 580
+Info (10041): Inferred latch for "BusWires[0]" at processor_2.v(580) File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 580
+Info (12128): Elaborating entity "dec3to8" for hierarchy "dec3to8:comb_6" File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 391
+Info (12128): Elaborating entity "regn" for hierarchy "regn:comb_164" File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 550
+Info (12128): Elaborating entity "counter_N_bits" for hierarchy "counter_N_bits:comb_171" File: C:/Users/izabe/OneDrive/Pulpit/SW/systemy11/systemy11_1/processor_2.v Line: 563
+Warning (12241): 12 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 128 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 12 input pins
+    Info (21059): Implemented 20 output pins
+    Info (21061): Implemented 96 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 41 warnings
+    Info: Peak virtual memory: 4835 megabytes
+    Info: Processing ended: Mon May 18 14:13:52 2020
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:23
+
+

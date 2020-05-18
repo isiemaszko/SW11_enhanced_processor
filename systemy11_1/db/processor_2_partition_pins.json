@@ -1,0 +1,137 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "Done",
+					"strict" : false
+				},
+				{
+					"name" : "Addr[8]",
+					"strict" : false
+				},
+				{
+					"name" : "Addr[7]",
+					"strict" : false
+				},
+				{
+					"name" : "Addr[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Addr[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Addr[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Addr[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Addr[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Addr[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Addr[0]",
+					"strict" : false
+				},
+				{
+					"name" : "DOUT[8]",
+					"strict" : false
+				},
+				{
+					"name" : "DOUT[7]",
+					"strict" : false
+				},
+				{
+					"name" : "DOUT[6]",
+					"strict" : false
+				},
+				{
+					"name" : "DOUT[5]",
+					"strict" : false
+				},
+				{
+					"name" : "DOUT[4]",
+					"strict" : false
+				},
+				{
+					"name" : "DOUT[3]",
+					"strict" : false
+				},
+				{
+					"name" : "DOUT[2]",
+					"strict" : false
+				},
+				{
+					"name" : "DOUT[1]",
+					"strict" : false
+				},
+				{
+					"name" : "DOUT[0]",
+					"strict" : false
+				},
+				{
+					"name" : "w",
+					"strict" : false
+				},
+				{
+					"name" : "Clock",
+					"strict" : false
+				},
+				{
+					"name" : "Resetn",
+					"strict" : false
+				},
+				{
+					"name" : "DIN[1]",
+					"strict" : false
+				},
+				{
+					"name" : "DIN[2]",
+					"strict" : false
+				},
+				{
+					"name" : "DIN[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Run",
+					"strict" : false
+				},
+				{
+					"name" : "DIN[8]",
+					"strict" : false
+				},
+				{
+					"name" : "DIN[7]",
+					"strict" : false
+				},
+				{
+					"name" : "DIN[6]",
+					"strict" : false
+				},
+				{
+					"name" : "DIN[5]",
+					"strict" : false
+				},
+				{
+					"name" : "DIN[4]",
+					"strict" : false
+				},
+				{
+					"name" : "DIN[3]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
